@@ -8,10 +8,10 @@
 <style>
 body{
   margin:0;
-  font-family:"Arial", sans-serif;
+  font-family:Arial, sans-serif;
   background:#fff7df;
-  color:#263044;
   text-align:center;
+  color:#263044;
 }
 
 .wrap{
@@ -21,94 +21,113 @@ body{
 }
 
 h1{
-  font-size:26px;
   color:#ff8c00;
+  font-size:26px;
 }
 
-.face{
+.face-area{
   position:relative;
-  width:300px;
-  height:360px;
+  width:330px;
   margin:20px auto;
-  background:#ffd9b3;
-  border-radius:48% 48% 45% 45%;
-  border:6px solid #ffb703;
 }
 
-.part{
+.face-img{
+  width:100%;
+  display:block;
+}
+
+.tap{
   position:absolute;
+  background:rgba(255,255,255,0);
   border:none;
   cursor:pointer;
-  font-weight:bold;
-  font-size:16px;
-  border-radius:30px;
-  background:#fff;
-  box-shadow:0 5px 0 #d8c8a0;
-  padding:10px 16px;
 }
 
-.part:active{
-  transform:translateY(4px);
-  box-shadow:0 1px 0 #d8c8a0;
+.eye-left{
+  top:42%;
+  left:23%;
+  width:22%;
+  height:18%;
 }
 
-.eye-left{ top:95px; left:55px; }
-.eye-right{ top:95px; right:55px; }
-.ear-left{ top:135px; left:-35px; }
-.ear-right{ top:135px; right:-35px; }
-.nose{ top:165px; left:115px; }
-.mouth{ top:245px; left:105px; }
-.hair{ top:20px; left:105px; }
-.face-btn{ bottom:20px; left:105px; }
+.eye-right{
+  top:42%;
+  left:56%;
+  width:22%;
+  height:18%;
+}
+
+.nose{
+  top:56%;
+  left:42%;
+  width:16%;
+  height:14%;
+}
+
+.mouth{
+  top:70%;
+  left:35%;
+  width:30%;
+  height:16%;
+}
+
+.ear-left{
+  top:50%;
+  left:0;
+  width:16%;
+  height:22%;
+}
+
+.ear-right{
+  top:50%;
+  right:0;
+  width:16%;
+  height:22%;
+}
 
 .result{
   background:#fff;
+  border:4px solid #8ecae6;
   border-radius:24px;
   padding:20px;
-  margin-top:20px;
-  border:4px solid #8ecae6;
+  margin-top:16px;
 }
 
 .word{
-  font-size:42px;
-  color:#fb8500;
+  font-size:44px;
   font-weight:bold;
+  color:#fb8500;
 }
 
 .ja{
   font-size:22px;
   margin-top:8px;
 }
-
-.hint{
-  margin-top:10px;
-  font-size:15px;
-  color:#607089;
-}
 </style>
 </head>
 
 <body>
 <div class="wrap">
+
   <h1>😊 顔のパーツをおぼえよう！</h1>
   <p>顔のパーツをタップしてね</p>
 
-  <div class="face">
-    <button class="part hair" onclick="showWord('hair','髪の毛')">hair</button>
-    <button class="part eye-left" onclick="showWord('eye','目')">eye</button>
-    <button class="part eye-right" onclick="showWord('eye','目')">eye</button>
-    <button class="part ear-left" onclick="showWord('ear','耳')">ear</button>
-    <button class="part ear-right" onclick="showWord('ear','耳')">ear</button>
-    <button class="part nose" onclick="showWord('nose','鼻')">nose</button>
-    <button class="part mouth" onclick="showWord('mouth','口')">mouth</button>
-    <button class="part face-btn" onclick="showWord('face','顔')">face</button>
+  <div class="face-area">
+    <img src="face.png" class="face-img" alt="顔のイラスト">
+
+    <button class="tap eye-left" onclick="showWord('eye','目')"></button>
+    <button class="tap eye-right" onclick="showWord('eye','目')"></button>
+    <button class="tap nose" onclick="showWord('nose','鼻')"></button>
+    <button class="tap mouth" onclick="showWord('mouth','口')"></button>
+    <button class="tap ear-left" onclick="showWord('ear','耳')"></button>
+    <button class="tap ear-right" onclick="showWord('ear','耳')"></button>
   </div>
 
   <div class="result">
     <div class="word" id="word">Tap!</div>
     <div class="ja" id="ja">タップしてね</div>
-    <div class="hint">英単語が出て、発音が流れます</div>
   </div>
+
 </div>
 
 <script>
@@ -121,9 +140,10 @@ function showWord(word, japanese){
   speech.rate = 0.75;
   speech.pitch = 1.1;
 
-  window.speechSynthesis.cancel();
-  window.speechSynthesis.speak(speech);
+  speechSynthesis.cancel();
+  speechSynthesis.speak(speech);
 }
 </script>
+
 </body>
 </html>
