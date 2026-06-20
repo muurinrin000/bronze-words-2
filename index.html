@@ -38,9 +38,18 @@ h1{
 
 .tap{
   position:absolute;
-  background:rgba(255,255,255,0);
-  border:none;
+  border:3px solid #4dabf7;
+  background:rgba(77,171,247,0.15);
+  border-radius:50%;
   cursor:pointer;
+  font-size:24px;
+
+  transition:all 0.15s;
+}
+
+.tap:active{
+  transform:scale(1.1);
+  background:rgba(77,171,247,0.3);
 }
 
 .eye-left{
@@ -115,12 +124,23 @@ h1{
   <div class="face-area">
     <img src="20EDAC44-180E-42AB-8C85-191BE2213E2A.png" class="face-img" alt="顔のイラスト">
 
-    <button class="tap eye-left" onclick="showWord('eye','目')"></button>
-    <button class="tap eye-right" onclick="showWord('eye','目')"></button>
-    <button class="tap nose" onclick="showWord('nose','鼻')"></button>
-    <button class="tap mouth" onclick="showWord('mouth','口')"></button>
-    <button class="tap ear-left" onclick="showWord('ear','耳')"></button>
-    <button class="tap ear-right" onclick="showWord('ear','耳')"></button>
+<button class="tap eye-left"
+onclick="showWord('eye','目')">👁️</button>
+
+<button class="tap eye-right"
+onclick="showWord('eye','目')">👁️</button>
+
+<button class="tap nose"
+onclick="showWord('nose','鼻')">👃</button>
+
+<button class="tap mouth"
+onclick="showWord('mouth','口')">👄</button>
+
+<button class="tap ear-left"
+onclick="showWord('ear','耳')">👂</button>
+
+<button class="tap ear-right"
+onclick="showWord('ear','耳')">👂</button>
   </div>
 
   <div class="result">
