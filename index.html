@@ -150,6 +150,29 @@ h1{
   font-size:22px;
   margin-top:8px;
 }
+  .extra-buttons{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:14px;
+}
+
+.extra-buttons button{
+  border:none;
+  background:#fff;
+  border-radius:18px;
+  padding:10px 14px;
+  font-size:16px;
+  font-weight:bold;
+  color:#263044;
+  box-shadow:0 4px 0 #d8c8a0;
+  cursor:pointer;
+}
+
+.extra-buttons button:active{
+  transform:translateY(3px);
+  box-shadow:0 1px 0 #d8c8a0;
+}
 </style>
 </head>
 
@@ -162,28 +185,24 @@ h1{
   <div class="face-area">
     <img src="20EDAC44-180E-42AB-8C85-191BE2213E2A.png" class="face-img" alt="顔のイラスト">
 
+  <!-- 顔の中をタップ -->
   <button class="tap eye-left" onclick="showWord('eye','目')"></button>
-
   <button class="tap eye-right" onclick="showWord('eye','目')"></button>
-
   <button class="tap eyebrow-left" onclick="showWord('eyebrow','眉毛')"></button>
-
   <button class="tap eyebrow-right" onclick="showWord('eyebrow','眉毛')"></button>
-
   <button class="tap nose" onclick="showWord('nose','鼻')"></button>
-
   <button class="tap mouth" onclick="showWord('mouth','口')"></button>
-
   <button class="tap ear-left" onclick="showWord('ear','耳')"></button>
-
   <button class="tap ear-right" onclick="showWord('ear','耳')"></button>
+</div>
 
-  <button class="tap hair" onclick="showWord('hair','髪の毛')"></button>
-
-  <button class="tap head" onclick="showWord('head','頭')"></button>
-
-  <button class="tap face" onclick="showWord('face','顔')"></button>
-  </div>
+<!-- 重なり防止：外側ボタン -->
+<div class="extra-buttons">
+  <button onclick="showWord('hair','髪の毛')">hair<br>髪の毛</button>
+  <button onclick="showWord('head','頭')">head<br>頭</button>
+  <button onclick="showWord('face','顔')">face<br>顔</button>
+</div>
+    
 
   <div class="result">
     <div class="word" id="word">Tap!</div>
